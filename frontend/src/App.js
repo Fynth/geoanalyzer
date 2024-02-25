@@ -62,20 +62,17 @@ const MapComponent = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div style={{ display: 'flex', flexDirection: 'row',  height: 20 }}>
         <div style={{ flex: 1 }}>
           <Panel title="My Panel">
-            <p>This is the content of the panel.</p>
           </Panel>
         </div>
         <div style={{ flex: 1 }}>
           <Panel title="My Panel 2">
-            <p>This is the content of the panel 2.</p>
           </Panel>
         </div>
         <div style={{ flex: 1 }}>
           <Panel title="My Panel 3">
-            <p>This is the content of the panel 3.</p>
           </Panel>
         </div>
       </div>
