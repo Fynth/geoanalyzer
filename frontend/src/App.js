@@ -2,8 +2,11 @@ import React, { useState, useRef } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
+const Tiffvision = (tiff){ //функция для отображения geotiff
 
-const ListItem = ({ item, onClick }) => {
+};
+
+const ListItem = ({ item, onClick }) => { //кликабельные списки
   return (
     <li onClick={() => onClick(item)}>
       {item.name}
@@ -11,7 +14,7 @@ const ListItem = ({ item, onClick }) => {
   );
 };
 
-const MyList = ({ setPosition }) => {
+const MyList = ({ setPosition }) => { //вывод информации о обьекте списка и обновление координат центра карты
   const handleItemClick = (item) => {
     console.log(`Кликнули на элемент 1: ${item.name} ${item.coordinat}`);
     setPosition(item.coordinat);
@@ -23,7 +26,7 @@ const MyList = ({ setPosition }) => {
     { id: 3, name: 'Советсая гавань', coordinat: [48.97171, 140.29037] },
   ];
 
-  return (
+  return ( // возвращает список элиментов, которые можно кликать
     <ul>
       {items.map(item => (
         <ListItem key={item.id} item={item} onClick={handleItemClick} />
@@ -32,7 +35,7 @@ const MyList = ({ setPosition }) => {
   );
 };
 
-const Panel = ({ title, children }) => {
+const Panel = ({ title, children }) => { // функция для создания понелей
   return (
     <div className="panel">
       <div className="panel-header">
@@ -45,7 +48,7 @@ const Panel = ({ title, children }) => {
   );
 };
 
-const MapComponent = () => {
+const MapComponent = () => { //основное тело сайта, переделать адекватно, чтоб карта создавалась в отдельной функции
   const [position, setPosition] = useState([50.5, 37.0]); // Координаты центра карты
   const mapRef = useRef(null); // Создаем ссылку для хранения ссылки на карту
   const ChangeView = ({ center }) => {
