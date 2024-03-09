@@ -1,20 +1,21 @@
 
 
-.panel {
-  color: rgb(177, 174, 174);
-  height: 100%
+.menu-hotizontal{
+  display: flex;
+  flex-direction: row;
 }
 
-.panel-header {
-  background-color: #2b2828;
-
+.menu-horizontal__menu-wrapper{
+  display: flex;
+  flex-direction: row;
 }
 
-.panel-body {
-
-  background-color: #2b2828;
+.menuitem{
+  padding: 20px 30px
 }
 
-.horizontal {
-  display:flex;
+.menu-horizontal-logo{
+  text-align:left;
+  padding: 20px 90px
+  
 }

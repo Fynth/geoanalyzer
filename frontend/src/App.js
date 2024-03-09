@@ -2,9 +2,8 @@ import React, { useState, useRef } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
-const Tiffvision = (tiff){ //функция для отображения geotiff
 
-};
+
 
 const ListItem = ({ item, onClick }) => { //кликабельные списки
   return (
@@ -37,11 +36,11 @@ const MyList = ({ setPosition }) => { //вывод информации о об�
 
 const Panel = ({ title, children }) => { // функция для создания понелей
   return (
-    <div className="panel">
-      <div className="panel-header">
+    <div>
+      <div class="menuitem">
         {title}
       </div>
-      <div className="panel-body">
+      <div>
         {children}
       </div>
     </div>
@@ -64,25 +63,6 @@ const MapComponent = () => { //основное тело сайта, перед�
   };
 
   return (
-    <div>
-      <div style={{ display: 'flex', flexDirection: 'row',  height: 20 }}>
-        <div style={{ flex: 1 }}>
-          <Panel title="My Panel">
-          </Panel>
-        </div>
-        <div style={{ flex: 1 }}>
-          <Panel title="My Panel 2">
-          </Panel>
-        </div>
-        <div style={{ flex: 1 }}>
-          <Panel title="My Panel 3">
-          </Panel>
-        </div>
-      </div>
-      <div>
-        <MyList setPosition={setPosition} />
-      </div>
-      <div style={{ flex: 1 }}>
       <MapContainer
           center={position}
           zoom={8}
@@ -95,9 +75,45 @@ const MapComponent = () => { //основное тело сайта, перед�
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
         </MapContainer>
-      </div>
-    </div>
   );
 };
 
-export default MapComponent;
+const VisulSait = () => {
+  return (
+    <div>
+      <div class ="menu-hotizontal">
+        <div class="menu-horizontal-logo">    
+        1
+        </div>
+        <div class="menu-horizontal__menu-wrapper">
+          <Panel title="О нас" role="menuitem">
+
+          </Panel>
+          <Panel title="Члены команды" role="menuitem">
+
+          </Panel>
+          <Panel title="Идея" role="menuitem">
+
+          </Panel>
+          <Panel title="Демоверсия" role="menuitem">
+
+          </Panel>
+          <Panel title="Аналоги" role="menuitem">
+
+          </Panel>
+          <Panel title="Приемущества" role="menuitem">
+
+          </Panel>
+      </div>
+    </div>
+    <div clss="Paty">
+
+    </div>
+
+
+  </div>
+
+  );
+}
+
+export default VisulSait;
