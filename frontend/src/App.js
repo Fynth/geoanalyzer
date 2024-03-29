@@ -83,34 +83,96 @@ const VisulSait = () => {
     <div>
       <div class ="menu-hotizontal">
         <div class="menu-horizontal-logo">    
-        1
+        Тут будет наша эмблема
         </div>
         <div class="menu-horizontal__menu-wrapper">
           <Panel title="О нас" role="menuitem">
-
           </Panel>
           <Panel title="Члены команды" role="menuitem">
-
           </Panel>
           <Panel title="Идея" role="menuitem">
-
           </Panel>
           <Panel title="Демоверсия" role="menuitem">
-
           </Panel>
           <Panel title="Аналоги" role="menuitem">
-
           </Panel>
           <Panel title="Приемущества" role="menuitem">
-
           </Panel>
       </div>
     </div>
-    <div clss="Paty">
+    <div class="team">
+      <div class="team-info">
+        Информация про нашу команду
+      </div>
+    <img class="project-image" src="" alt="Изображение проекта" />
+    </div>
+
+    <div class="team-container">
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
 
     </div>
 
+    <div class="team">
+      <div class="team-info">
+        Описание идеи
+      </div>
+    <img class="project-image" src="" alt="Изображение проекта" />
+    </div>
+    
+    <div id="map-container" class="map">
+      {MapComponent()}
+    
+    </div>
 
+    <div class="team">
+      <div class="team-info">
+        Аналоги
+        <table id="my-table">
+          <tr>
+            <td>Название</td>
+            <td>Описание</td>
+          </tr>
+          <tr>
+            <td>Текст</td>
+            <td>Текст</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      Приемущества
+      <ul>
+        <li>Первый элемент списка</li>
+        <li>Второй элемент списка</li>
+        <li>Третий элемент списка</li>
+      </ul>
+    </div>
+    <div>
+      Контактная информация
+    </div>
   </div>
 
   );
