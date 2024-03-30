@@ -20,13 +20,15 @@ const MyList = ({ setPosition }) => {
   const items = [
     { id: 1, name: 'Белгород', coordinat: [50.5, 37.0] },
     { id: 2, name: 'Грайворон', coordinat: [50.478816, 35.672995] },
-    { id: 3, name: 'Советсая гавань', coordinat: [48.97171, 140.29037] },
+    { id: 3, name: 'Советская гавань', coordinat: [48.97171, 140.29037] },
   ];
 
   return (
     <ul>
       {items.map(item => (
+          <button>
         <ListItem key={item.id} item={item} onClick={handleItemClick} />
+            </button>
       ))}
     </ul>
   );
