@@ -3,7 +3,9 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
 
-const ListItem = ({ item, onClick }) => {
+
+
+const ListItem = ({ item, onClick }) => { //кликабельные списки
   return (
     <li onClick={() => onClick(item)}>
       {item.name}
@@ -11,7 +13,7 @@ const ListItem = ({ item, onClick }) => {
   );
 };
 
-const MyList = ({ setPosition }) => {
+const MyList = ({ setPosition }) => { //вывод информации о обьекте списка и обновление координат центра карты
   const handleItemClick = (item) => {
     console.log(`Кликнули на элемент 1: ${item.name} ${item.coordinat}`);
     setPosition(item.coordinat);
@@ -23,7 +25,7 @@ const MyList = ({ setPosition }) => {
     { id: 3, name: 'Советская гавань', coordinat: [48.97171, 140.29037] },
   ];
 
-  return (
+  return ( // возвращает список элиментов, которые можно кликать
     <ul>
       {items.map(item => (
           <button>
@@ -34,20 +36,20 @@ const MyList = ({ setPosition }) => {
   );
 };
 
-const Panel = ({ title, children }) => {
+const Panel = ({ title, children }) => { // функция для создания понелей
   return (
-    <div className="panel">
-      <div className="panel-header">
+    <div>
+      <div class="menuitem">
         {title}
       </div>
-      <div className="panel-body">
+      <div>
         {children}
       </div>
     </div>
   );
 };
 
-const MapComponent = () => {
+const MapComponent = () => { //основное тело сайта, переделать адекватно, чтоб карта создавалась в отдельной функции
   const [position, setPosition] = useState([50.5, 37.0]); // Координаты центра карты
   const mapRef = useRef(null); // Создаем ссылку для хранения ссылки на карту
   const ChangeView = ({ center }) => {
@@ -63,25 +65,6 @@ const MapComponent = () => {
   };
 
   return (
-    <div>
-      <div style={{ display: 'flex', flexDirection: 'row',  height: 20 }}>
-        <div style={{ flex: 1 }}>
-          <Panel title="My Panel">
-          </Panel>
-        </div>
-        <div style={{ flex: 1 }}>
-          <Panel title="My Panel 2">
-          </Panel>
-        </div>
-        <div style={{ flex: 1 }}>
-          <Panel title="My Panel 3">
-          </Panel>
-        </div>
-      </div>
-      <div>
-        <MyList setPosition={setPosition} />
-      </div>
-      <div style={{ flex: 1 }}>
       <MapContainer
           center={position}
           zoom={8}
@@ -94,9 +77,107 @@ const MapComponent = () => {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           />
         </MapContainer>
-      </div>
-    </div>
   );
 };
 
-export default MapComponent;
+const VisulSait = () => {
+  return (
+    <div>
+      <div class ="menu-hotizontal">
+        <div class="menu-horizontal-logo">    
+        Тут будет наша эмблема
+        </div>
+        <div class="menu-horizontal__menu-wrapper">
+          <Panel title="О нас" role="menuitem">
+          </Panel>
+          <Panel title="Члены команды" role="menuitem">
+          </Panel>
+          <Panel title="Идея" role="menuitem">
+          </Panel>
+          <Panel title="Демоверсия" role="menuitem">
+          </Panel>
+          <Panel title="Аналоги" role="menuitem">
+          </Panel>
+          <Panel title="Приемущества" role="menuitem">
+          </Panel>
+      </div>
+    </div>
+    <div class="team">
+      <div class="team-info">
+        Информация про нашу команду
+      </div>
+    <img class="project-image" src="" alt="Изображение проекта" />
+    </div>
+
+    <div class="team-container">
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+      <div class="team-member">
+        <image src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Егор
+        </div>
+      </div>
+
+    </div>
+
+    <div class="team">
+      <div class="team-info">
+        Описание идеи
+      </div>
+    <img class="project-image" src="" alt="Изображение проекта" />
+    </div>
+    
+    <div id="map-container" class="map">
+      {MapComponent()}
+    
+    </div>
+
+    <div class="team">
+      <div class="team-info">
+        Аналоги
+        <table id="my-table">
+          <tr>
+            <td>Название</td>
+            <td>Описание</td>
+          </tr>
+          <tr>
+            <td>Текст</td>
+            <td>Текст</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div>
+      Приемущества
+      <ul>
+        <li>Первый элемент списка</li>
+        <li>Второй элемент списка</li>
+        <li>Третий элемент списка</li>
+      </ul>
+    </div>
+    <div>
+      Контактная информация
+    </div>
+  </div>
+
+  );
+}
+
+export default VisulSait;
