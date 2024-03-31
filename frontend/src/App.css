@@ -1,8 +1,12 @@
 
+.my-background {
+  background-color: #49dc35c2; /* Задает свойство "background-color" с цветом #f2f2f2 */
+}
 
-.menu-hotizontal{
+.menu-hotizontal {
   display: flex;
   flex-direction: row;
+  justify-content: center; /* Выравнивание по горизонтали по центру */
 }
 
 .menu-horizontal__menu-wrapper{
@@ -25,7 +29,10 @@
   grid-template-columns: repeat(5, 1fr); /* 5 column grid with equal width */
   gap: 10px; /* Gap between grid items */
   padding: 10px;
+  width: 1000px; /* Задайте нужную ширину контейнера */
+  margin: 0 auto; /* Выравнивание по горизонтали */
 }
+
 .team-member {
   position: relative;
   width: 100%;
@@ -72,6 +79,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 auto; /* Выравнивание по горизонтали */
+  justify-content: center; /* Выравнивание по горизонтали по центру */
+
 }
 
 .team-info {
@@ -85,7 +95,11 @@
 }
 
 .map {
-  height: '80%';
-  width: '80%';
-  margin: '1 auto';
+  height: '80';
+  width: '80';
 };
+
+.logo {
+  width: 10px; /* Задайте желаемую ширину */
+  height: 10px; /* Высота будет автоматически подстраиваться под ширину */
+}

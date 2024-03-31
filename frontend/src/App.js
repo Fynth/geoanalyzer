@@ -57,9 +57,12 @@ const MapComponent = () => { //основное тело сайта, перед�
   }
   
   const mapContainerStyle = {
-    height: '800px',
-    width: '100%',
-    margin: '0 auto', // Центрирование карты по горизонтали
+    height: '500px',
+    width: '70%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: '0 auto'
   };
 
   return (
@@ -76,14 +79,15 @@ const MapComponent = () => { //основное тело сайта, перед�
           />
         </MapContainer>
   );
+  
 };
 
 const VisulSait = () => {
   return (
-    <div>
+    <div class="my-background">  
       <div class ="menu-hotizontal">
-        <div class="menu-horizontal-logo">    
-        Тут будет наша эмблема
+        <div class="logo">
+          <img src="/Picture/Logo.jpg" alt="Logo" width= "30%"/>
         </div>
         <div class="menu-horizontal__menu-wrapper">
           <Panel title="О нас" role="menuitem">
@@ -109,27 +113,27 @@ const VisulSait = () => {
 
     <div class="team-container">
       <div class="team-member">
-        <image src="" alt="Photo 1"/>
+        <img src="" alt="Photo 1"/>
+        <div class="team-member-info">
+          Кирилл
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="Picture/photo_2024-03-29_23-52-44.jpg" alt="Photo 1"/>       
         <div class="team-member-info">
           Егор
         </div>
       </div>
       <div class="team-member">
-        <image src="" alt="Photo 1"/>
+        <img src="" alt="Photo 1"/>
         <div class="team-member-info">
-          Егор
+          Расул
         </div>
       </div>
       <div class="team-member">
-        <image src="" alt="Photo 1"/>
+        <img src="" alt="Photo 1"/>
         <div class="team-member-info">
-          Егор
-        </div>
-      </div>
-      <div class="team-member">
-        <image src="" alt="Photo 1"/>
-        <div class="team-member-info">
-          Егор
+          София
         </div>
       </div>
 
@@ -142,7 +146,7 @@ const VisulSait = () => {
     <img class="project-image" src="" alt="Изображение проекта" />
     </div>
     
-    <div id="map-container" class="map">
+    <div  class="map">
       {MapComponent()}
     
     </div>
