@@ -89,7 +89,7 @@ const VisulSait = () => {
     <div class="my-background">  
       <div class ="menu-hotizontal">
         <div class="logo">
-          <img src="/Picture/Logo.jpg" alt="Logo" width= "30%"/>
+          <img src="/Picture/Logo.jpg" alt="Logo" width= "20%"/>
         </div>
         <div class="menu-horizontal__menu-wrapper">
           <Panel title="О нас" role="menuitem">
@@ -108,32 +108,32 @@ const VisulSait = () => {
     </div>
     <div class="team">
       <div class="team-info">
-        Информация про нашу команду
-      </div>
+      Мы группа молодых, амбициозных студентов, которые собрались вместе, чтобы воплотить свою уникальную идею в жизнь с помощью стартапа. Наша команда состоит из разносторонних талантливых индивидуумов, которые объединились вокруг общей страсти к инновациям и разработке приложений.
+      </div>  
     <img class="project-image" src="" alt="Изображение проекта" />
     </div>
 
     <div class="team-container">
       <div class="team-member">
-        <img src="" alt="Photo 1"/>
+        <img src="Picture/Kirill.jpg" alt="Photo 1"/>
         <div class="team-member-info">
           Кирилл
         </div>
       </div>
       <div class="team-member">
-        <img src="Picture/photo_2024-03-29_23-52-44.jpg" alt="Photo 1"/>       
+        <img src="Picture/Egor.jpg" alt="Photo 1"/>       
         <div class="team-member-info">
           Егор
         </div>
       </div>
       <div class="team-member">
-        <img src="" alt="Photo 1"/>
+        <img src="Picture/Rasul.jpg" alt="Photo 1"/>
         <div class="team-member-info">
           Расул
         </div>
       </div>
       <div class="team-member">
-        <img src="" alt="Photo 1"/>
+        <img src="Picture/Sofa.jpg" alt="Photo 1"/>
         <div class="team-member-info">
           София
         </div>
@@ -142,24 +142,35 @@ const VisulSait = () => {
     </div>
 
     <div class="team">
-      <div class="team-info">
-        Описание идеи
+      <div class="idea-info">
+      Наша команда стремится создать инновационное приложение для геоанализа, которое поможет предпринимателям принимать обоснованные решения о возможности открытия бизнеса на основе подробной базы геоданных.
       </div>
-    <img class="project-image" src="" alt="Изображение проекта" />
+    <img src="Picture/Pomenat.png" alt="Изображение проекта" width= "40%"/>
     </div>
     
     <div  class="map">
-      {MapComponent()}
+      <div>
+        {MapComponent()}
+      </div>
+
     
     </div>
 
-    <div class="team">
-      <div class="team-info">
+    <div class="Analogi_table">
+      <div class="Analogi_name">
         Аналоги
-        <table id="my-table">
+        <table id="my-table" class="Analog_table">
           <tr>
             <td>Название</td>
             <td>Описание</td>
+          </tr>
+          <tr>
+            <td>Сбер Геоаналитика</td>
+            <td>Текст</td>
+          </tr>
+          <tr>
+            <td>Текст</td>
+            <td>Текст</td>
           </tr>
           <tr>
             <td>Текст</td>
@@ -168,13 +179,39 @@ const VisulSait = () => {
         </table>
       </div>
     </div>
-    <div>
+    <div Class="Advantages">
       Приемущества
-      <ul>
-        <li>Первый элемент списка</li>
-        <li>Второй элемент списка</li>
-        <li>Третий элемент списка</li>
-      </ul>
+      <ul class="tilesWrap_Advantages">
+  <li>
+    <h2>01</h2>
+    <h3>Рациональное принятие решений</h3>
+    <p>
+    Благодаря анализу геоданных и использованию алгоритмов, приложение помогает предпринимателям принимать обоснованные решения при выборе места для открытия бизнеса. Это позволяет минимизировать риски и повышает шансы на успех.
+    </p>
+  </li>
+  <li>
+    <h2>02</h2>
+    <h3>Индивидуальные рекомендации</h3>
+    <p>
+    Приложение учитывает предпочтения и критерии пользователя, предоставляя индивидуальные рекомендации о наиболее подходящих местах для открытия бизнеса. Это помогает пользователю найти идеальное местоположение, соответствующее его уникальным потребностям и целям.
+    </p>
+
+  </li>
+  <li>
+    <h2>03</h2>
+    <h3>Экономия времени и ресурсов</h3>
+    <p>
+    Приложение сокращает время и затраты на исследование и анализ геоданных вручную. Пользователи могут получить все необходимые данные и рекомендации в одном месте, что позволяет им сосредоточиться на других аспектах развития бизнеса.
+    </p>
+  </li>
+  <li>
+    <h2>04</h2>
+    <h3>Свежие данные и обновления</h3>
+    <p>
+    Приложение обновляет базу геоданных регулярно, чтобы пользователи всегда имели доступ к актуальной информации. Это позволяет следить за изменениями в рыночной среде и адаптироваться к новым трендам и возможностям.
+    </p>
+  </li>
+</ul>
     </div>
     <div>
       Контактная информация
