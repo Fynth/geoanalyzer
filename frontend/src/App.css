@@ -147,11 +147,15 @@
 }
 
 .tilesWrap_tilesWrap_Advantages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 0;
   margin: 50px auto;
   list-style: none;
-  text-align: center;
 }
+
 .tilesWrap_Advantages li {
   display: inline-block;
   width: 20%;
@@ -317,4 +321,26 @@ background: linear-gradient(to right, #0ABFBC, #FC354C);
   word-break: break-word;
   justify-content: center;
   hyphens: auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.contact-info h2 {
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
 }

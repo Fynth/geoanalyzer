@@ -3,6 +3,17 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
 
+function ContactInfo(props) {
+  return (
+    <div className="contact-info">
+      <h2>Контактная информация</h2>
+      <p>Имя: {props.name}</p>
+      <p>Email: {props.email}</p>
+      <p>Телефон: {props.phone}</p>
+    </div>
+  );
+}
+
 
 
 const ListItem = ({ item, onClick }) => { //кликабельные списки
@@ -232,13 +243,9 @@ const VisulSait = () => {
   </li>
 </ul>
     </div >
-    <div class="conact_info">
-  <div>Бабушкин Кирилл Сергеевич</div>
-  <div>Контактная информация</div>
-  <div>+89511537329</div>
-  <div>sticks0220@gmail.com</div>
+<div >
+      <ContactInfo name="Кирилл Бабушкин" email="sticks0220@gmail.com" phone="+7 951 153 73 29" />
 </div>
-
 </div>
   );
 }
