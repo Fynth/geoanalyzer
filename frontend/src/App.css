@@ -140,11 +140,7 @@
   background-color: #f2f2f2;
 }
 
-.Analog_table{
-  display: grid; 
-  gap: 10px; /* Расстояние между ячейками */
-  background-color: #f2f2f2;
-}
+
 
 .Advantages{
 
@@ -273,4 +269,52 @@ background: linear-gradient(to right, #ffc500, #c21500);
   background: #FC354C;
 background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
 background: linear-gradient(to right, #0ABFBC, #FC354C);
+}
+
+
+.Analog_table {
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+}
+.Analog_table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #d8d8d8;
+	font-size: 14px;
+}
+.Analog_table thead tr th:first-child {
+	border-radius: 8px 0 0 8px;
+}
+.Analog_table thead tr th:last-child {
+	border-radius: 0 8px 8px 0;
+}
+.Analog_table tbody td {
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+.Analog_table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+.Analog_table tbody tr td:first-child {
+	border-radius: 8px 0 0 8px;
+}
+.Analog_table tbody tr td:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.conact_info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  white-space: normal;
+  word-break: break-word;
+  justify-content: center;
+  hyphens: auto;
 }

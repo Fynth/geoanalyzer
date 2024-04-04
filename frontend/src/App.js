@@ -156,29 +156,48 @@ const VisulSait = () => {
     
     </div>
 
-    <div class="Analogi_table">
-      <div class="Analogi_name">
-        Аналоги
-        <table id="my-table" class="Analog_table">
-          <tr>
-            <td>Название</td>
-            <td>Описание</td>
-          </tr>
-          <tr>
-            <td>Сбер Геоаналитика</td>
-            <td>Текст</td>
-          </tr>
-          <tr>
-            <td>Текст</td>
-            <td>Текст</td>
-          </tr>
-          <tr>
-            <td>Текст</td>
-            <td>Текст</td>
-          </tr>
-        </table>
-      </div>
-    </div>
+<div class="Analogi_table">
+  <div>
+    Аналоги
+    <table class="Analog_table">
+      <thead>
+        <tr>
+          <td>Название</td>
+          <td>Описание</td>
+          <td>Недостатки</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Сбер Геоаналитика</td>
+          <td>Текст</td>
+        </tr>
+        <tr>
+          <td>2GIS Аналитика</td>
+          <td>Текст</td>
+        </tr>
+        <tr>
+          <td>Компас от Тинькофф Бизнес</td>
+          <td>Текст</td>
+        </tr>
+        <tr>
+          <td>Геоинтеллект от Яндекс</td>
+          <td>Текст</td>
+        </tr>
+        <tr>
+          <td>Билайн.Геоаналитика</td>
+          <td>Текст</td>
+        </tr>
+        <tr>
+          <td>ГеоКурсор VK</td>
+          <td>Текст</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    
     <div Class="Advantages">
       Приемущества
       <ul class="tilesWrap_Advantages">
@@ -212,12 +231,15 @@ const VisulSait = () => {
     </p>
   </li>
 </ul>
-    </div>
-    <div>
-      Контактная информация
-    </div>
-  </div>
+    </div >
+    <div class="conact_info">
+  <div>Бабушкин Кирилл Сергеевич</div>
+  <div>Контактная информация</div>
+  <div>+89511537329</div>
+  <div>sticks0220@gmail.com</div>
+</div>
 
+</div>
   );
 }
 
