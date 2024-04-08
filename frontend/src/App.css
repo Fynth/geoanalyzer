@@ -90,7 +90,7 @@
   /* Стили для буфера */
   font-size: 18px;
   line-height: 1.5;
-  color: #333;
+  
   border: 1px solid #ccc;
   padding: 20px;
   margin-top: 20px;
@@ -103,9 +103,13 @@
 }
 
 .map {
-
+  margin: 0 auto;
   border-top: 5px solid black;
   border-bottom: 5px solid black;
+  height: 500px; /* Высота элемента */
+  width: 800px; /* Ширина элемента */
+  flex: 1;
+
 }
 
 .logo {
@@ -143,20 +147,22 @@
 
 
 .Advantages{
+  margin: 0 auto
 
 }
 
 .tilesWrap_tilesWrap_Advantages {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 0;
-  margin: 50px auto;
   list-style: none;
 }
 
 .tilesWrap_Advantages li {
+  margin: 0 auto;
   display: inline-block;
   width: 20%;
   min-width: 200px;
@@ -169,8 +175,9 @@
   min-height: 25vh;
   background: #262a2b;
   border: 1px solid #252727;
-  text-align: left;
+  text-align: center ;
 }
+
 .tilesWrap_Advantages li h2 {
   font-size: 114px;
   margin: 0;

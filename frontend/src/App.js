@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import './App.css';
+import ReactMapGL from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function ContactInfo(props) {
   return (
@@ -60,40 +60,39 @@ const Panel = ({ title, children }) => { // функция для создани
   );
 };
 
-const MapComponent = () => { //основное тело сайта, переделать адекватно, чтоб карта создавалась в отдельной функции
-  const [position, setPosition] = useState([50.5, 37.0]); // Координаты центра карты
-  const mapRef = useRef(null); // Создаем ссылку для хранения ссылки на карту
-  const ChangeView = ({ center }) => {
-    const map = useMap();
-    map.setView(center, map.getZoom());
-    return null; // Не отображаем компонент
-  }
-  
-  const mapContainerStyle = {
-    height: '500px',
-    width: '70%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: '0 auto'
-  };
+const MapComponent = () => {
+  const [viewport, setViewport] = useState({
+
+    width: '800px', // Задайте фиксированную ширину
+    height: '600px', // Задайте фиксированную высоту
+  });
 
   return (
-      <MapContainer
-          center={position}
-          zoom={8}
-          style={mapContainerStyle}
-          whenCreated={(map) => { mapRef.current = map; }} // Сохраняем ссылку на карту при ее создании
-        >
-          <ChangeView center={position} />
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          />
-        </MapContainer>
+      <ReactMapGL
+        {...viewport}
+        mapboxAccessToken="pk.eyJ1Ijoic3RpY2tzMDIyMCIsImEiOiJjbDFpbDVjczYwdW40M2dxdWNwcGltMGoxIn0.kWELbv7_2AW1__dUCeD20A"
+        mapStyle={"mapbox://styles/mapbox/outdoors-v11"}
+        onViewportChange={(viewport) => {
+          setViewport(viewport);
+        }}
+      >
+         <div className="viewPortnfo">
+          <div>
+            <strong>Longitude:</strong>
+            <span> {viewport.longitude}</span>
+          </div>
+          <div>
+            <strong>Latitude:</strong> <span>{viewport.latitude}</span>
+          </div>
+
+        </div>
+      </ReactMapGL>
+
   );
-  
 };
+
+
+
 
 const VisulSait = () => {
   return (
@@ -159,9 +158,9 @@ const VisulSait = () => {
     <img src="Picture/Pomenat.png" alt="Изображение проекта" width= "40%"/>
     </div>
     
-    <div  class="map">
-      <div>
-        {MapComponent()}
+    <div >
+      <div class="map">
+      {MapComponent()}
       </div>
 
     
@@ -251,3 +250,4 @@ const VisulSait = () => {
 }
 
 export default VisulSait;
+
