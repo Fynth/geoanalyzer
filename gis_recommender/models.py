@@ -16,7 +16,6 @@ class Recommendation(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField()
-    rating = models
 
     def __str__(self):
         return self.name
@@ -29,7 +28,6 @@ class GisRecommendation(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField()
-    rating = models
     def __str__(self):
         return self.name
 
