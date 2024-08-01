@@ -1,12 +1,32 @@
+import React, { useState } from 'react';
+import './GeoJSONImport.css';
 
-import React from 'react';
+const GeoJSONImport = ({ onImport }) => {
+  const [loading, setLoading] = useState(false);
 
-const GeoJSONImport = ({ onImport, onExport }) => {
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setLoading(true);
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        if (typeof onImport === 'function') {
+          onImport(content);
+        }
+        setLoading(false);
+      };
+      reader.readAsText(file);
+    }
+  };
+
   return (
-    <div>
-      <h2>Импорт/Экспорт данных</h2>
-      <input type="file" accept=".geojson" onChange={onImport} />
-      <button onClick={onExport}>Экспорт данных</button>
+    <div className="geojson-import-container">
+      <h2>Импорт векторных данных</h2>
+      <input type="file" accept=".geojson" onChange={handleFileChange} />
+      <button onClick={() => setLoading(true)} disabled={loading}>
+        {loading ? 'Загрузка...' : 'Импорт данных'}
+      </button>
     </div>
   );
 };

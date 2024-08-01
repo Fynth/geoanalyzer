@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import ReactMapGL, { Source, Layer } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import GeoJSONMap from './GeoJSONMap';
 
-const Layers = () => {
+const Layers = ({ geoJsonData }) => {
   const [isActive, setIsActive] = useState(false);
   const [isLayerVisible, setIsLayerVisible] = useState(true);
 
@@ -18,7 +16,7 @@ const Layers = () => {
       <div className="toggle-container" onClick={toggle}>
         <div className={`circle ${isActive ? 'active' : ''}`}></div>
       </div>
-      {isLayerVisible && <GeoJSONMap geoJsonUrl="/date/BO.geojson" />}
+      {isLayerVisible && <GeoJSONMap geoJsonData={geoJsonData} />}
     </div>
   );
 };

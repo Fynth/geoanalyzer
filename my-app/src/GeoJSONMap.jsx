@@ -1,35 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Source, Layer } from 'react-map-gl';
+// Ваш код для отображения GeoJSON данных на карте
+import React from 'react';
 
-const GeoJSONLayer = ({ geoJsonUrl }) => {
-  const [geojson, setGeojson] = useState(null);
-
-  useEffect(() => {
-    const loadGeoJsonFile = async () => {
-      const response = await fetch(geoJsonUrl);
-      const data = await response.json();
-      setGeojson(data);
-    };
-
-    loadGeoJsonFile();
-  }, [geoJsonUrl]);
-
+const GeoJSONMap = ({ geoJsonData }) => {
+  // Ваш код для отображения GeoJSON данных на карте
   return (
-    <>
-      {geojson && (
-        <Source type="geojson" data={geojson}>
-          <Layer
-            id="geojson-layer"
-            type="fill"
-            paint={{
-              'fill-color': '#0080ff',
-              'fill-opacity': 0.5
-            }}
-          />
-        </Source>
+    <div>
+      {geoJsonData ? (
+        <pre>{JSON.stringify(geoJsonData, null, 2)}</pre>
+      ) : (
+        <p>No data loaded</p>
       )}
-    </>
+    </div>
   );
 };
 
-export default GeoJSONLayer;
+export default GeoJSONMap;
