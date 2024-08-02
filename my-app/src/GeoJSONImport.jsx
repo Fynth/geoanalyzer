@@ -22,11 +22,8 @@ const GeoJSONImport = ({ onImport }) => {
 
   return (
     <div className="geojson-import-container">
-      <h2>Импорт векторных данных</h2>
+      <h3>Импорт векторных данных</h3>
       <input type="file" accept=".geojson" onChange={handleFileChange} />
-      <button onClick={() => setLoading(true)} disabled={loading}>
-        {loading ? 'Загрузка...' : 'Импорт данных'}
-      </button>
     </div>
   );
 };

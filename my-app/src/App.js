@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import GeoJSONMap from './GeoJSONMap';
 import GeoJSONImport from './GeoJSONImport';
 import MapComponent from './MapComponent';
 import Layers from './Layers';
 
 const VisulSait = () => {
-  const [geoJsonData, setGeoJsonData] = useState(null);
+  const [layers, setLayers] = useState([]);
 
   const handleImport = (content) => {
-    setGeoJsonData(content);
+    const newLayer = JSON.parse(content);
+    setLayers([...layers, newLayer]);
   };
 
   return (
     <div>
       <MapComponent>
-        <Layers geoJsonData={geoJsonData} />
+        <Layers layers={layers} />
         <GeoJSONImport onImport={handleImport} />
       </MapComponent>
     </div>
   );
-}
+};
 
 export default VisulSait;
