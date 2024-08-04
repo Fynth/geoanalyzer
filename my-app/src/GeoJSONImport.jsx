@@ -12,7 +12,7 @@ const GeoJSONImport = ({ onImport }) => {
       reader.onload = (e) => {
         const content = e.target.result;
         if (typeof onImport === 'function') {
-          onImport(content);
+          onImport(content,  file.name);
         }
         setLoading(false);
       };

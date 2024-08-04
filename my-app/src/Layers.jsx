@@ -21,7 +21,7 @@ const Layers = ({ layers }) => {
               checked={layerVisibility[index]}
               onChange={() => toggleLayerVisibility(index)}
             />
-            <label>Layer {index + 1}</label>
+            <label>{layer.name} </label>
           </div>
         ))}
       </div>
